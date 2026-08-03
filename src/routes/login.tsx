@@ -95,12 +95,12 @@ function LoginPage() {
                 placeholder="aarav.sharma"
                 onChange={(event) => setForm((p) => ({ ...p, userId: event.target.value }))}
                 className={`h-12 w-full rounded-xl border bg-card pl-10 pr-4 text-sm outline-none transition-shadow placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/15 ${
-                  errors.userId ? "border-destructive" : "border-input"
+                  errors["userId"] ? "border-destructive" : "border-input"
                 }`}
               />
             </div>
-            {errors.userId ? (
-              <p className="text-xs font-medium text-destructive">{errors.userId}</p>
+            {errors["userId"] ? (
+              <p className="text-xs font-medium text-destructive">{errors["userId"]}</p>
             ) : null}
           </div>
 
@@ -109,7 +109,7 @@ function LoginPage() {
             name="password"
             value={form.password}
             onChange={(value) => setForm((p) => ({ ...p, password: value }))}
-            error={errors.password}
+            error={errors["password"]}
           />
 
           <div className="flex items-center justify-between gap-3">

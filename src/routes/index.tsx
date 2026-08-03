@@ -148,8 +148,8 @@ function formatINR(value: number) {
 }
 
 function LandingPage() {
-  const [activeSolution, setActiveSolution] = useState(solutionTabs[0].id);
-  const [loanTab, setLoanTab] = useState(loanTabs[0]);
+  const [activeSolution, setActiveSolution] = useState(solutionTabs[0]!.id);
+  const [loanTab, setLoanTab] = useState(loanTabs[0]!);
   const [amount, setAmount] = useState(750000);
   const [tenure, setTenure] = useState(5);
   const [rate, setRate] = useState(9.99);
@@ -171,7 +171,7 @@ function LandingPage() {
         (Math.pow(1 + monthlyRate, months) - 1);
   const payable = emi * months;
 
-  const solution = solutionTabs.find((tab) => tab.id === activeSolution) ?? solutionTabs[0];
+  const solution = solutionTabs.find((tab) => tab.id === activeSolution) ?? solutionTabs[0]!;
 
   return (
     <div className="min-h-screen bg-background">

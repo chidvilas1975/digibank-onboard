@@ -128,7 +128,7 @@ function RegisterPage() {
             value={form.fullName}
             onChange={update("fullName")}
             placeholder="Aarav Sharma"
-            error={errors.fullName}
+            error={errors["fullName"]}
           />
           <TextField
             label="User ID"
@@ -137,7 +137,7 @@ function RegisterPage() {
             value={form.userId}
             onChange={update("userId")}
             placeholder="aarav.sharma"
-            error={errors.userId}
+            error={errors["userId"]}
           />
           <TextField
             label="Email address"
@@ -147,7 +147,7 @@ function RegisterPage() {
             value={form.email}
             onChange={update("email")}
             placeholder="you@example.com"
-            error={errors.email}
+            error={errors["email"]}
           />
 
           <div>
@@ -157,7 +157,7 @@ function RegisterPage() {
               autoComplete="new-password"
               value={form.password}
               onChange={update("password")}
-              error={errors.password}
+              error={errors["password"]}
             />
             <div className="mt-3 flex items-center gap-3">
               <div className="flex h-1.5 flex-1 gap-1">
@@ -182,7 +182,7 @@ function RegisterPage() {
             autoComplete="new-password"
             value={form.confirm}
             onChange={update("confirm")}
-            error={errors.confirm}
+            error={errors["confirm"]}
           />
 
           <button
@@ -224,10 +224,10 @@ function TextField({
   name: string;
   value: string;
   onChange: (value: string) => void;
-  placeholder?: string;
-  error?: string;
+  placeholder?: string | undefined;
+  error?: string | undefined;
   icon: React.ReactNode;
-  type?: string;
+  type?: string | undefined;
 }) {
   return (
     <div className="space-y-2">

@@ -9,8 +9,8 @@ type PasswordFieldProps = {
   onChange: (value: string) => void;
   placeholder?: string;
   autoComplete?: string;
-  error?: string;
-  className?: string;
+  error?: string | undefined;
+  className?: string | undefined;
 };
 
 /** Password input with an in-field eye toggle. */
