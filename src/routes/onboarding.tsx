@@ -119,18 +119,19 @@ function OnboardingPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                to="/register"
+                to="/open-account"
                 className="inline-flex items-center gap-2 rounded-xl bg-destructive px-6 py-3.5 text-sm font-semibold text-destructive-foreground shadow-float"
               >
-                Start onboarding <ArrowRight className="size-4" />
+                Choose my account <ArrowRight className="size-4" />
               </Link>
               <Link
                 to="/login"
-                className="rounded-xl border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold backdrop-blur-md"
+                className="rounded-xl glass-water-dark px-6 py-3.5 text-sm font-semibold"
               >
                 Resume application
               </Link>
             </div>
+
           </div>
 
           <div className="preserve-3d relative mx-auto w-full max-w-sm">
