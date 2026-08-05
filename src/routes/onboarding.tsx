@@ -100,11 +100,13 @@ function OnboardingPage() {
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden surface-navy">
+        <WaterBackdrop />
         <div
           aria-hidden
           className="absolute left-1/2 top-1/2 size-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/10 animate-spin-slow"
         />
-        <div className="scene-3d mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-2">
+        <div className="scene-3d relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-2">
+
           <div className="animate-rise-in">
             <span className="inline-flex rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]">
               Onboarding
