@@ -7,8 +7,10 @@ const primaryNav = [
   { label: "Products", to: "/" },
   { label: "Digital Services", to: "/" },
   { label: "Onboarding", to: "/onboarding" },
-  { label: "Calculators", to: "/" },
+  { label: "Open Account", to: "/open-account" },
+  { label: "Dashboard", to: "/dashboard" },
 ];
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
