@@ -14,6 +14,8 @@ import {
 import { Reveal } from "@/components/Reveal";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { WaterBackdrop } from "@/components/site/WaterBackdrop";
+
 import mobileBanking from "@/assets/mobile-banking.jpg";
 import heroCard from "@/assets/hero-card.jpg";
 
