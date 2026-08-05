@@ -289,13 +289,44 @@ function OnboardingPage() {
 
         <Reveal delay={120} className="mt-10 text-center">
           <Link
-            to="/register"
+            to="/open-account"
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground"
           >
-            Create my account <ArrowRight className="size-4" />
+            Choose my account type <ArrowRight className="size-4" />
           </Link>
         </Reveal>
       </section>
+
+      {/* NEXT STEP BRIDGE */}
+      <section className="relative isolate overflow-hidden surface-navy">
+        <WaterBackdrop bubbles={8} />
+        <div className="scene-3d relative mx-auto max-w-4xl px-4 py-20 text-center">
+          <span className="inline-flex rounded-full glass-water-dark px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]">
+            Up next
+          </span>
+          <h2 className="mt-6 font-display text-3xl font-bold sm:text-4xl">
+            Now pick the account you want to open
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm text-primary-foreground/75">
+            Zero balance savings, salary account, premium savings or a current account for your
+            business — compare them and confirm in one flow.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-4">
+            {["Zero Balance", "Salary", "Premium", "Current"].map((label) => (
+              <div key={label} className="rounded-2xl glass-water-dark p-4 text-sm font-semibold">
+                {label}
+              </div>
+            ))}
+          </div>
+          <Link
+            to="/open-account"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-destructive px-7 py-4 text-sm font-semibold text-destructive-foreground shadow-float"
+          >
+            Continue to account selection <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
+
 
       <SiteFooter />
     </div>
