@@ -14,6 +14,8 @@ import {
 import { Reveal } from "@/components/Reveal";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { WaterBackdrop } from "@/components/site/WaterBackdrop";
+
 import mobileBanking from "@/assets/mobile-banking.jpg";
 import heroCard from "@/assets/hero-card.jpg";
 
@@ -100,11 +102,13 @@ function OnboardingPage() {
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden surface-navy">
+        <WaterBackdrop />
         <div
           aria-hidden
           className="absolute left-1/2 top-1/2 size-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/10 animate-spin-slow"
         />
-        <div className="scene-3d mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-2">
+        <div className="scene-3d relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-2">
+
           <div className="animate-rise-in">
             <span className="inline-flex rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]">
               Onboarding
@@ -119,18 +123,19 @@ function OnboardingPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                to="/register"
+                to="/open-account"
                 className="inline-flex items-center gap-2 rounded-xl bg-destructive px-6 py-3.5 text-sm font-semibold text-destructive-foreground shadow-float"
               >
-                Start onboarding <ArrowRight className="size-4" />
+                Choose my account <ArrowRight className="size-4" />
               </Link>
               <Link
                 to="/login"
-                className="rounded-xl border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold backdrop-blur-md"
+                className="rounded-xl glass-water-dark px-6 py-3.5 text-sm font-semibold"
               >
                 Resume application
               </Link>
             </div>
+
           </div>
 
           <div className="preserve-3d relative mx-auto w-full max-w-sm">
@@ -284,13 +289,44 @@ function OnboardingPage() {
 
         <Reveal delay={120} className="mt-10 text-center">
           <Link
-            to="/register"
+            to="/open-account"
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground"
           >
-            Create my account <ArrowRight className="size-4" />
+            Choose my account type <ArrowRight className="size-4" />
           </Link>
         </Reveal>
       </section>
+
+      {/* NEXT STEP BRIDGE */}
+      <section className="relative isolate overflow-hidden surface-navy">
+        <WaterBackdrop bubbles={8} />
+        <div className="scene-3d relative mx-auto max-w-4xl px-4 py-20 text-center">
+          <span className="inline-flex rounded-full glass-water-dark px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]">
+            Up next
+          </span>
+          <h2 className="mt-6 font-display text-3xl font-bold sm:text-4xl">
+            Now pick the account you want to open
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm text-primary-foreground/75">
+            Zero balance savings, salary account, premium savings or a current account for your
+            business — compare them and confirm in one flow.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-4">
+            {["Zero Balance", "Salary", "Premium", "Current"].map((label) => (
+              <div key={label} className="rounded-2xl glass-water-dark p-4 text-sm font-semibold">
+                {label}
+              </div>
+            ))}
+          </div>
+          <Link
+            to="/open-account"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-destructive px-7 py-4 text-sm font-semibold text-destructive-foreground shadow-float"
+          >
+            Continue to account selection <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
+
 
       <SiteFooter />
     </div>
